@@ -38,7 +38,7 @@ export function adminUpdateFailed(err) {
 export function adminSignup(fd) {
   return (dispatch) => {
     axios
-      .post('/admin/register', fd, {
+      .post('https://save-more.vercel.app/admin/register', fd, {
         withCredentials: true,
         headers: { 'Content-Type': 'multipart/form-data' },
       })
@@ -51,7 +51,7 @@ export function adminSignup(fd) {
 export function adminUpdate(admin) {
   return (dispatch) => {
     axios
-      .post('/api/admin/update', admin, config)
+      .post('https://save-more.vercel.app/api/admin/update', admin, config)
       .then((res) => dispatch(adminUpdateSuccess(res.data)))
       .catch((error) => {
         dispatch(adminUpdateFailed(error.response.data));

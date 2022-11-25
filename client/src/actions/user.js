@@ -28,7 +28,7 @@ export const loginFailed = (err) => {
 export function login(user) {
   return (dispatch) => {
     axios
-      .post(`/api/user/login`, user, config)
+      .post(`https://save-more.vercel.app/api/user/login`, user, config)
       .then((data) => dispatch(loginSuccess(data.data)))
       .catch((err) => {
         dispatch(
@@ -56,7 +56,7 @@ export const signupFailed = (err) => {
 export function signup(user) {
   return (dispatch) => {
     axios
-      .post(`/api/user/signup`, user, config)
+      .post(`https://save-more.vercel.app/api/user/signup`, user, config)
       .then((data) => {
         dispatch(signupSuccess(data.data));
       })
@@ -79,12 +79,14 @@ export function userLogout() {
 export function fetchUserData() {
   return (dispatch) => {
     axios
-      .get(`/api/currentUser`, config)
+      .get(`https://save-more.vercel.app/api/currentUser`, config)
       .then((res) => dispatch(addUserData(res.data)));
   };
 }
 export function logout() {
   return (dispatch) => {
-    axios.get(`/api/user/logout`, config).then((res) => dispatch(userLogout()));
+    axios
+      .get(`https://save-more.vercel.app/api/user/logout`, config)
+      .then((res) => dispatch(userLogout()));
   };
 }

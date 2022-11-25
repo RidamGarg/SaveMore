@@ -66,7 +66,9 @@ class ProductUpdate extends Component {
   };
   componentDidMount = async () => {
     const { id } = this.props;
-    const res = await axios.get(`/api/product/${id}`);
+    const res = await axios.get(
+      `https://save-more.vercel.app/api/product/${id}`
+    );
     this.setState({
       product: res.data,
     });

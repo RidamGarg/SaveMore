@@ -46,14 +46,14 @@ export const userSubtractedProduct = (id) => {
 export const userRemovedProduct = (id) => {
   return (dispatch) => {
     axios
-      .get(`/remove/product/${id}`)
+      .get(`https://save-more.vercel.app/remove/product/${id}`)
       .then((res) => dispatch(userRemovedProductSuccessfully(res.data)));
   };
 };
 export const getUserProducts = () => {
   return (dispatch) => {
     axios
-      .get(`/get/user/products`)
+      .get(`https://save-more.vercel.app/get/user/products`)
       .then((res) => dispatch(addUserProducts(res.data)));
   };
 };

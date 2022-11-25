@@ -29,8 +29,8 @@ function ImageUpdate(props) {
                     class="form-check-input"
                     type="checkbox"
                     id={`image-${idx}`}
-                    onClick={(e) => ImageClick(image.filename, e)}
                     class="d-none"
+                    onClick={(e) => ImageClick(image.filename, e)}
                   />
                   <label
                     class="form-check-label"

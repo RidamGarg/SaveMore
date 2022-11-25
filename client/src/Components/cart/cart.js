@@ -66,7 +66,9 @@ async function handleCheckout(val, user, setPayment) {
   // call api here
   // api should send details like amount,currency,name,id,email,phone
   // displayRazorpay();
-  const res = await axios.post('/api/razorpay/', { amount: val });
+  const res = await axios.post('https://save-more.vercel.app/api/razorpay/', {
+    amount: val,
+  });
   console.log(res.data);
 
   displayRazorpay(
