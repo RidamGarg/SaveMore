@@ -46,7 +46,7 @@ const updateProductSuccess = () => {
 export const productAdd = (fd) => {
   return (dispatch) => {
     axios
-      .post('/add/product', fd, config)
+      .post('https://save-more.vercel.app/add/product', fd, config)
       .then(() => {
         dispatch(addProductSuccess());
       })
@@ -64,7 +64,7 @@ export const productAdd = (fd) => {
 export const productUpdate = (fd, id) => {
   return (dispatch) => {
     axios
-      .post(`/update/product/${id}`, fd, config)
+      .post(`https://save-more.vercel.app/update/product/${id}`, fd, config)
       .then(() => {
         dispatch(updateProductSuccess());
       })
