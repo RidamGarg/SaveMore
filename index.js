@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
-const path = require('path');
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -32,6 +32,7 @@ app.use(function (req, res, next) {
     next();
   }
 });
+app.set("trust proxy", 1);
 app.use(
   session({
     cookieName: "session",
@@ -43,6 +44,8 @@ app.use(
       //secure:true,
       expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
       maxAge: 1000 * 60 * 60 * 24 * 7,
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // must be 'none' to enable cross-site delivery
+      secure: process.env.NODE_ENV === "production", // must be true if sameSite='none'
     },
   })
 );
