@@ -32,7 +32,6 @@ app.use(function (req, res, next) {
     next();
   }
 });
-// app.set("trust proxy", 1);
 app.use(
   session({
     cookieName: "session",
@@ -41,11 +40,9 @@ app.use(
     activeDuration: 5 * 60 * 1000,
     cookie: {
       httpOnly: true,
-      secure: true,
+      //secure:true,
       expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
       maxAge: 1000 * 60 * 60 * 24 * 7,
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // must be 'none' to enable cross-site delivery
-      //secure: process.env.NODE_ENV === "production" ? true : false, // must be true if sameSite='none'
     },
   })
 );
