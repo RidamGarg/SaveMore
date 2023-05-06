@@ -8,7 +8,7 @@ https://drive.google.com/file/d/1hsYTn-7DWD-KHo9TBSqubd9j9PXK0hmU/view?usp=shari
 
 ## Deployed Project
 
-https://save-more.herokuapp.com/
+https://ecom-0fm5.onrender.com/
 
 ## Features and Interfaces
 
